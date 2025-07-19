@@ -29,8 +29,7 @@ class Player(Base):
     
     # Relationships
     organization = relationship("Organization", back_populates="players")
-    results = relationship("Result", back_populates="player")
-    partner_results = relationship("Result", foreign_keys="Result.partner_id", back_populates="partner")
+    results = relationship("Result", foreign_keys="[Result.player_id]", back_populates="player")
+    partner_results = relationship("Result", foreign_keys="[Result.partner_id]", back_populates="partner")
     ratings = relationship("Rating", back_populates="player")
     masterpoints = relationship("Masterpoint", back_populates="player")
-    subscriptions = relationship("Subscription", back_populates="player")

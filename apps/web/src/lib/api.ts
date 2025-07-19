@@ -54,7 +54,7 @@ export const apiClient = {
   getEventResults: (id: number) => api.get(`/events/${id}/results`),
   
   // Results
-  getEventResults: (eventId: number) => api.get(`/results/event/${eventId}`),
+  getResultsByEvent: (eventId: number) => api.get(`/results/event/${eventId}`),
   getPlayerResults: (playerId: number) => api.get(`/results/player/${playerId}`),
   getLeaderboard: (period: string = 'all') => api.get('/results/leaderboard', { params: { period } }),
   

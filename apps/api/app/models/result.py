@@ -25,7 +25,6 @@ class Result(Base):
     event = relationship("Event", back_populates="results")
     player = relationship("Player", foreign_keys=[player_id], back_populates="results")
     partner = relationship("Player", foreign_keys=[partner_id], back_populates="partner_results")
-    contracts = relationship("Contract", back_populates="result")
 
 class Rating(Base):
     __tablename__ = "ratings"

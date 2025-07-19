@@ -33,7 +33,7 @@ export function RecentEvents() {
 
   return (
     <div className="space-y-4">
-      {eventsList.slice(0, 5).map((event: any) => (
+      {eventsList.slice(0, 5).map((event: { id: number; name: string; date: string; start_date: string; type: string; status: string }) => (
         <div key={event.id} className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
           <div className="flex-1">
             <Link 

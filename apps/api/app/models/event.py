@@ -46,4 +46,3 @@ class Session(Base):
     # Relationships
     event = relationship("Event", back_populates="sessions")
     results = relationship("Result", back_populates="session")
-    hands = relationship("Hand", back_populates="session")

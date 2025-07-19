@@ -11,10 +11,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
         defaultOptions: {
           queries: {
             staleTime: 60 * 1000, // 1 minute
-            retry: (failureCount, error: any) => {
+            retry: (failureCount: number, error: unknown) => {
               // Don't retry on 4xx errors
-              if (error?.response?.status >= 400 && error?.response?.status < 500) {
-                return false
+              if (error && typeof error === 'object' && 'response' in error) {
+                const axiosError = error as { response?: { status?: number } }
+                if (axiosError.response?.status && axiosError.response.status >= 400 && axiosError.response.status < 500) {
+                  return false
+                }
               }
               return failureCount < 3
             },

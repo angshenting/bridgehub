@@ -27,7 +27,7 @@ export function DashboardStats() {
   const totalPlayers = players?.data?.length || 0
   const totalEvents = events?.data?.length || 0
   const recentEventsCount = recentEvents?.data?.length || 0
-  const activePlayers = players?.data?.filter((p: any) => p.status === 'active').length || 0
+  const activePlayers = players?.data?.filter((p: { status: string }) => p.status === 'active').length || 0
 
   const stats = [
     {

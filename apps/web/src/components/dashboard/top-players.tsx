@@ -37,7 +37,7 @@ export function TopPlayers() {
         Top performers this month
       </div>
       
-      {players.slice(0, 5).map((player: any, index: number) => (
+      {players.slice(0, 5).map((player: { player_id: number; name: string; player_name: string; player_number: string; masterpoints: number; total_points: number; events_played: number; rank: number }, index: number) => (
         <div key={player.player_id} className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
           <div className="flex items-center space-x-3">
             <div className={`
