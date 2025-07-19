@@ -1,0 +1,21 @@
+{
+  "name": "@bridge-platform/database",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Database schemas and migrations for Bridge Platform",
+  "scripts": {
+    "migrate": "alembic upgrade head",
+    "migrate:create": "alembic revision --autogenerate -m",
+    "migrate:down": "alembic downgrade -1",
+    "seed": "python seed_database.py",
+    "reset": "python reset_database.py"
+  },
+  "dependencies": {
+    "alembic": "^1.13.1",
+    "psycopg2-binary": "^2.9.9",
+    "sqlalchemy": "^2.0.25"
+  },
+  "devDependencies": {
+    "faker": "^8.4.1"
+  }
+}
