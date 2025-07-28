@@ -1,0 +1,12 @@
+{
+  "name": "bridge-platform",
+  "buildCommand": "cd apps/web && npm run build",
+  "outputDirectory": "apps/web/.next",
+  "installCommand": "npm install && cd apps/web && npm install",
+  "framework": "nextjs",
+  "rootDirectory": "apps/web",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@bridge-api-url",
+    "NEXT_PUBLIC_APP_NAME": "Bridge Platform"
+  }
+}
